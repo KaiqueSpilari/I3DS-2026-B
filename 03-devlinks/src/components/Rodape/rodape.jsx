@@ -1,6 +1,6 @@
 import React from 'react'
 
-const rodape = (children) => {
+const Rodape = ({children}) => {
   return (
     <footer>
       <p> Feito com AMOR por <a href="https://github.com/">{children}</a>
@@ -9,4 +9,4 @@ const rodape = (children) => {
   )
 }
 
-export default rodape
+export default Rodape

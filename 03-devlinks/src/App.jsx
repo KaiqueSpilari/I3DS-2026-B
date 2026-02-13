@@ -1,6 +1,8 @@
 import './App.css'
 import Link from './components/Link/Link'
 import Perfil from './components/Perfil/Perfil'
+import Rodape from './components/Rodape/rodape'
+import SocialLink from './components/SocialLink/SocialLink'
 
 function App() {
 
@@ -30,10 +32,10 @@ function App() {
       <div className='sociallinks'>  </div>
       
        <ul>
-        <Link url={"https://github.com/"}><íon-ícon name="logo-github"></íon-ícon></Link>
-        <Link url={"https://www.Instagram.com/"}><íon-ícon name="logo-Instagram"></íon-ícon></Link>
-        <Link url={"https://www.youtube.com/"}><íon-ícon name="logo-Youtube"></íon-ícon></Link>
-        <Link url={"https://web.whatsapp.com/"}><íon-ícon name="logo-Whatsapp"></íon-ícon></Link>
+        <SocialLink url={"https://github.com/"} icon="logo-Github"></SocialLink>
+        <SocialLink url={"https://www.Instagram.com/"} icon="logo-Instagram"></SocialLink>
+        <SocialLink url={"https://www.youtube.com/"} icon="logo-Youtube"></SocialLink>
+        <SocialLink url={"https://web.whatsapp.com/"} icon="logo-Whatsapp"></SocialLink>
       </ul>
         
       <Rodape> Kaique Spilari </Rodape>
