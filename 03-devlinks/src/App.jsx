@@ -7,29 +7,24 @@ import SocialLink from './components/SocialLink/SocialLink'
 function App() {
 
   return (
-    <div id='app'>
+    <div id='App'>
 
       <Perfil fotoPerfil={"https://placehold.co/200x200"}> Kaique Spilari </Perfil>
 
 
       <div className='switch'>botão switch</div>
 
-        <ul>
+
+      <div className='Link'> 
+     <ul>
         <Link url={""}>Inscreva-se</Link>
-        </ul>
-        <ul>
         <Link url={""}>Minha playlist</Link>
-        </ul>
-        <ul>
         <Link url={""}>Me pague um café</Link>
-        </ul>
-        <ul>
         <Link url={""}>Conheça o curso DEV</Link>
-        </ul>
+    </ul>
+ </div>
 
-      <div className='links'>  </div>
-
-      <div className='sociallinks'>  </div>
+      <div className='sociallinks'>  
       
        <ul>
         <SocialLink url={"https://github.com/"} icon="logo-Github"></SocialLink>
@@ -37,6 +32,7 @@ function App() {
         <SocialLink url={"https://www.youtube.com/"} icon="logo-Youtube"></SocialLink>
         <SocialLink url={"https://web.whatsapp.com/"} icon="logo-Whatsapp"></SocialLink>
       </ul>
+      </div>
         
       <Rodape> Kaique Spilari </Rodape>
     </div> 
