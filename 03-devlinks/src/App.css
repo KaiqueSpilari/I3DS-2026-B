@@ -9,8 +9,13 @@
 }
 
 #App {
-  font-family: "inter", sans-serif;
   height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
   background-image: var(--bg-url);
   background-repeat: no-repeat;
   background-position: top center;
@@ -19,9 +24,20 @@
 }
 
 ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 24px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+#SocialLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  & a {
+    color: var(--text-color);
+    font-size: x-large;
+  }
 }

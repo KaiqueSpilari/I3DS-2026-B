@@ -24,7 +24,7 @@ function App() {
     </ul>
  </div>
 
-      <div className='sociallinks'>  
+      <div id='SocialLink'>  
       
        <ul>
         <SocialLink url={"https://github.com/"} icon="logo-Github"></SocialLink>
