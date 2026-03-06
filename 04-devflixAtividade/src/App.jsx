@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./App.css";
 
 import logo from "./assets/devflix.png";
@@ -8,45 +9,41 @@ import Rodape from "./components/Rodape/Rodape";
 import MovieCard from "./components/MovieCard/MovieCard";
 
 const App = () => {
+
+  const { t } = useTranslation(); // TEM QUE FICAR AQUI
+
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
 
-  //Utilizando uma CHAVE de API do arquivo .env
   const apiKey = import.meta.env.VITE_OMDB_API_KEY;
   const apiUrl = `https://omdbapi.com/?apikey=${apiKey}`;
 
-  //Criando a conexão com a API e trazendo informações
   const searchMovies = async (title) => {
     const response = await fetch(`${apiUrl}&s=${title}`);
     const data = await response.json();
 
-    //Alimentando a variavel movies
     setMovies(data.Search);
   };
 
   useEffect(() => {
-    searchMovies("Hulk"); // termo para pesquina ao carregar o site
+    searchMovies("Hulk");
   }, []);
 
   return (
     <div id="App">
-      <img
-        id="Logo"
-        src={logo}
-        alt="Logotipo do serviço de streaming Devflix, com letras vermelhas e fundo preto, promovendo conteúdo de séries, filmes e entretenimento online."
-      />
+      <img id="Logo" src={logo} alt="Logo" />
 
       <div className="search">
         <input
           onKeyDown={(e) => e.key === "Enter" && searchMovies(search)}
           onChange={(e) => setSearch(e.target.value)}
           type="text"
-          placeholder="Pesquise por filmes"
+          placeholder={t("search")}
         />
         <img
           onClick={() => searchMovies(search)}
           src={lupa}
-          alt="Botão de ação para pesquisa!"
+          alt="Botão de pesquisa"
         />
       </div>
 
@@ -57,10 +54,12 @@ const App = () => {
           ))}
         </div>
       ) : (
-        <h2 className="empty"> Filme não encontrado </h2>
+        <h2 className="empty">{t("movieNotFound")}</h2>
       )}
 
-      <Rodape link={"https://github.com/KaiqueSpilari"}>KaiqueSpilari</Rodape>
+      <Rodape link={"https://github.com/KaiqueSpilari"}>
+        KaiqueSpilari
+      </Rodape>
     </div>
   );
 };
