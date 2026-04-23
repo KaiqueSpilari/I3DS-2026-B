@@ -1,9 +1,20 @@
 import style from "./Chat.module.css"
 
-const Chat = () => {
+import { Input } from "@mui/material"
+import SendIcon from "@mui/icons-material/send"
+import { useState } from "react"
+
+const Chat = (props) => {
+const [messageList,setMessageList] = useState([])
+
   return (
     <div>
-      Chat
+<div className={style.chat_container}>
+
+    <div className={style.chat_container}>
+
+    </div>
+</div>
     </div>
   )
 }
